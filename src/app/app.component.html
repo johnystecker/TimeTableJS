@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<table style="width: 100%">
+  <thead>
+  <tr>
+    <th style="border: none!important"></th>
+    <th *ngFor="let time of this.lessonTimes">
+      {{time.start}}<br>{{time.end}}
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let day of days">
+      <td>{{day.day}}</td>
+      <ng-container *ngFor="let lesson of day.lessons">
+        <td [innerHTML]="getLesson(lesson)"></td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
