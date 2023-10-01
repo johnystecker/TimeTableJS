@@ -12,10 +12,21 @@ export interface Lesson{
 }
 
 export interface LessonVariable extends Lesson{
-  date:string[];
+  occurrence:Occurrence[]
+}
+
+export interface Occurrence{
+  day: string;
+  lessons: number[];
+  dates: string[];
 }
 
 export interface Day{
   day:string;
   lessons:number[];
+}
+
+export interface DateRangeJS{
+  start : Date;
+  end : Date;
 }

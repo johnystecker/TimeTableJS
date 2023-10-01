@@ -1,17 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
 th,td{
   text-align: center;
 }
 
-thead th {
+.thead th {
   border: 2px solid black;
 }
 
-tbody td{
-  padding: 4px;
-  border: 1px solid black;
+.tbody td{
+  padding: 10px 4px;
 }
 
 .removeBorder{
-  border: none;
+  border: none !important;
 }
+
+.tableHeader{
+  background-color: #FAF7F2;
+}
+
+.lessonVariable{
+  background-color: #D1B7A0;
+}
+
+.lessonDefault{
+  background-color: #F5E4DA;
+}
+
+.header{
+  display: flex;
+  justify-content: right;
+}
+
+.date-range-input{
+
+}
+
+body { padding: 1% 1% 0 1%; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,18 +1,31 @@
-<table style="width: 100%">
-  <thead>
+<div class="header">
+  <div class="date-range-input">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" readonly [(ngModel)]="startDate"
+               style="user-select: none !important;">
+        <input matEndDate placeholder="End date" readonly [(ngModel)]="endDate" style="user-select: none !important;">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+</div>
+
+<table style="width: 100%; border: 1px solid black">
+  <thead class="thead">
   <tr>
-    <th style="border: none!important"></th>
-    <th *ngFor="let time of this.lessonTimes">
-      {{time.start}}<br>{{time.end}}
+    <th class="removeBorder"></th>
+    <th *ngFor="let time of this.lessonTimes" class="tableHeader removeBorder">
+      {{time.start}}<br><br>{{time.end}}
     </th>
   </tr>
   </thead>
-  <tbody>
+  <tbody class="tbody">
     <tr *ngFor="let day of days">
-      <td>{{day.day}}</td>
-      <ng-container *ngFor="let lesson of day.lessons">
-        <td [innerHTML]="getLesson(lesson)"></td>
-      </ng-container>
+      <td class="removeBorder tableHeader">{{day.day}}</td>
+      <td *ngFor="let lesson of day.lessons" [innerHTML]="getLesson(lesson)" [ngClass]="getCssForLesson(lesson)"></td>
     </tr>
   </tbody>
 </table>
