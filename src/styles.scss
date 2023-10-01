@@ -37,4 +37,39 @@ th,td{
 
 }
 
-body { padding: 1% 1% 0 1%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.timeTable{
+  table-layout:fixed;
+  width: 100%;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 600px){
+  .timeTable {
+    font-size: 7px !important;
+    line-height: 12px !important;
+  }
+
+  .tbody td{
+    padding: 5px 4px;
+  }
+}
+
+.open-source {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.open-source a {
+  color: blue;
+}
+
+@media (min-width: 1200px){
+  .timeTable {
+    font-size: 20px !important;
+    line-height: 25px !important;
+  }
+}
+
+body { padding: 1% 1% 0 1%; font-family: Roboto, "Helvetica Neue", sans-serif;}
