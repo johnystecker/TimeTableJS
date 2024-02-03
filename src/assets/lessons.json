@@ -2,81 +2,91 @@
   "itemsDefault": [
     {
       "id": 1,
-      "name": "IM",
+      "name": "MSP",
       "cv": false,
-      "code": "P209"
+      "code": "P207"
     },
     {
       "id": 2,
-      "name": "KON",
-      "cv": false,
-      "code": "P209"
+      "name": "MSP",
+      "cv": true,
+      "code": "P207"
     },
     {
       "id": 3,
-      "name": "KON",
-      "cv": true,
-      "code": "P209"
-    },
-    {
-      "id": 4,
-      "name": "DAŇ",
+      "name": "PPC",
       "cv": false,
-      "code": "P211"
-    },
-    {
-      "id": 5,
-      "name": "DAŇ",
-      "cv": true,
-      "code": "P211"
-    },
-    {
-      "id": 6,
-      "name": "BAN",
-      "cv": false,
-      "code": "P320"
-    },
-    {
-      "id": 7,
-      "name": "BAN",
-      "cv": true,
-      "code": "P320"
+      "code": "PC213"
     }
   ],
   "itemsVariable": [
     {
-      "id": 8,
-      "name": "SE",
+      "id": 4,
+      "name": "OPP",
       "cv": false,
       "code": "P320",
       "occurrence": [
         {
-          "day" : "STV",
-          "lessons": [9,10,11,12,13],
-          "dates": ["2023-10-05", "2023-10-19", "2023-11-02", "2023-11-23"]
-        },
-        {
-          "day" : "PIA",
-          "lessons": [2,3,4,5,6,8,9,10],
-          "dates": ["2023-10-06", "2023-10-20", "2023-11-03", "2023-11-24"]
+          "day" : "STR",
+          "lessons": [2,3,4,5,7,8],
+          "dates": ["2024-02-07","2024-02-28","2024-03-06"]
         }
       ]
     },
     {
-      "id": 9,
-      "name": "MĽZ",
+      "id": 5,
+      "name": "OPP",
       "cv": false,
       "code": "P320",
       "occurrence": [
         {
-          "day": "STR",
-          "lessons": [5,7,8,9,10,11],
-          "dates": ["2023-10-04", "2023-11-15"]
+          "day" : "PON",
+          "lessons": [4,5],
+          "dates": ["2024-04-08"]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "POI",
+      "cv": false,
+      "code": "P320",
+      "occurrence": [
+        {
+          "day" : "PON",
+          "lessons": [2,3,4,5,7,8],
+          "dates": ["2024-02-12","2024-02-19"]
         },
         {
+          "day" : "STR",
+          "lessons": [2,3,4,5,7,8],
+          "dates": ["2024-03-20"]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "POI",
+      "cv": false,
+      "code": "P320",
+      "occurrence": [
+        {
+          "day" : "PON",
+          "lessons": [2,3],
+          "dates": ["2024-04-08"]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "MV",
+      "cv": false,
+      "code": "P207",
+      "occurrence": [
+        {
           "day": "PIA",
-          "lessons": [5,7,8,9,10,11],
-          "dates" : ["2023-09-29", "2023-10-13", "2023-10-27", "2023-11-10", "2023-12-01", "2023-12-08"]
+          "lessons": [2,3,4,5,6,8,9,10,11,12],
+          "dates": ["2024-02-09","2024-03-01","2024-03-15","2024-04-05"]
         }
       ]
     }

@@ -33,7 +33,6 @@ export class WeekRangeSelectionStrategy implements MatDateRangeSelectionStrategy
 
   private _createFiveDayRange(date: Date | null): DateRange<Date> {
     if (date) {
-      console.log(date.getDay())
       const day = date.getDay() - 1
       const start = this._dateAdapter.addCalendarDays(date, (day === -1 ? -6 : -day));
       const end = this._dateAdapter.addCalendarDays(date,   (day === -1 ? 0 : 6 - day));
@@ -62,8 +61,8 @@ export class AppComponent implements OnInit {
   lessonTimes: LessonTime[];
   days: Day[];
 
-  startDate;
-  endDate;
+  startDate: Date;
+  endDate: Date;
 
   ngOnInit() {
     this.lessonTimes = lessonTimesJson.map(e => e as LessonTime);
@@ -110,7 +109,6 @@ export class AppComponent implements OnInit {
   }
 
   replaceLessonsInDays(dayOfWeek: number, valueDateString:string, valueLesson: LessonVariable){
-    console.log('fire ' + valueLesson.name)
     let occurrence:string;
     switch (dayOfWeek){
       case 1 : occurrence = 'PON'; break;
@@ -119,23 +117,15 @@ export class AppComponent implements OnInit {
       case 4 : occurrence = 'STV'; break;
       case 5 : occurrence = 'PIA'; break;
     }
-    valueLesson.occurrence.find((value) => value.day === occurrence).lessons.forEach((value, index) => {
-      this.days.find( (value) => value.day === occurrence).lessons[value-1] = valueLesson.id
+    valueLesson.occurrence.find((value) => value.day === occurrence).lessons.forEach((value) => {
+      this.days.find( (value) => value.day === occurrence).lessons[value-2] = valueLesson.id
     })
 
   }
 
-  log(){
-    console.log(this.startDate)
-    console.log(typeof this.startDate);
-
-    let x = new Date(this.startDate);
-    console.log(x.getDay());
-  }
-
   getCssForLesson(lesson: number) : string{
     if(lesson === 0) return 'removeBorder'
-    if(lesson === 8 || lesson === 9) return 'lessonVariable';
+    if(lessonsJson.itemsVariable.map(item => item.id).indexOf(lesson) > -1) return 'lessonVariable';
     return 'lessonDefault';
   }
 }
